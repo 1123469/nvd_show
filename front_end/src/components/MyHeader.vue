@@ -1,6 +1,6 @@
 <template>
 <div>
-    <header>Todo App</header>
+    <header>Vul App</header>
 </div>
 </template>
 

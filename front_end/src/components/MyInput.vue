@@ -1,6 +1,6 @@
 <template>
     <div class="inputField">
-      <input type="text" placeholder="Add your new todo" v-model="title" @keyup.enter="add"/>
+      <input type="text" placeholder="Find your new NVD vulnerability type" v-model="title" @keyup.enter="add"/>
       <!-- <button><i class="fas fa-plus"></i></button> -->
     </div>
 </template>
