@@ -68,7 +68,7 @@ public class VulController {
     public String deleteAllDoneTodos(){
         int success = 0;
         QueryWrapper<VulItem> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("done",true);
+        queryWrapper.eq("wrong",true);
         List<VulItem> list  = vulsMapper.selectList(queryWrapper);
         for(VulItem i:list)
             success+=vulsMapper.deleteById(i.getId());

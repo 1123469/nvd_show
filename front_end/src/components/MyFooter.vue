@@ -4,7 +4,7 @@
     <!-- <input type="checkbox" :checked="isAll" @change="checkAll"> -->
     <input type="checkbox" v-model="isAll">
   </label>
-  <span>{{undoneTotal}}<span class="pendingTasks"></span> pending tasks, {{total}} in total</span>
+  <span>{{undoneTotal}}<span class="pendingTasks"></span> right tags, {{total}} in total</span>
   <button @click="clearAll">Clear All</button>
 </div>
 </template>
@@ -27,7 +27,7 @@ export default {
         // return i
         return this.todos.reduce(
           (pre,current)=>{
-            return pre+(current.done?0:1)
+            return pre+(current.wrong?0:1)
           },0)
       },
       isAll:{

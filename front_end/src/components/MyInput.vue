@@ -1,6 +1,6 @@
 <template>
     <div class="inputField">
-      <input type="text" placeholder="Find your new NVD vulnerability type" v-model="title" @keyup.enter="add"/>
+      <input type="text" placeholder="Find your new NVD vulnerability type" v-model="contents" @keyup.enter="add"/>
       <!-- <button><i class="fas fa-plus"></i></button> -->
     </div>
 </template>
@@ -12,20 +12,20 @@ export default {
     props:['addTodo'],
     data(){
       return {
-        title:''
+        contents:''
       }
     },
     methods:{
       add(){
         // wrap user input
-        if(!this.title.trim())
+        if(!this.contents.trim())
             return
         const todoObj = {
           // id:nanoid(),
-          title:this.title
+          contents:this.contents
         }
         this.addTodo(todoObj)
-        this.title=''
+        this.contents=''
       }
     }
 }

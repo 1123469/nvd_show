@@ -2,8 +2,8 @@
 <div class="todoList">
     <li>
       <label>
-        <input type="checkbox" :checked="todo.done" @change="handleCheck(todo.id)">
-      <span>{{todo.title}}</span>
+        <input type="checkbox" :checked="todo.wrong" @change="handleCheck(todo.id)">
+      <span>{{todo.contents}}</span>
       </label>
       <button class="btn btn-danger" @click="handleDelete(todo.id)">delete</button>
       <!-- <a>-</a> -->

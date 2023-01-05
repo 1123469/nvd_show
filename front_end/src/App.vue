@@ -82,11 +82,11 @@ export default {
     )
       location.reload()
     },
-    checkAllTodo(done){
+    checkAllTodo(wrong){
       // this.todos.forEach(todo => {
       //   todo.done = done    
       // });
-      let data = {"done":done}
+      let data = {"wrong":wrong}
       this.$http.post('/updateAllTodos',data)
       this.$http.get('/getAllTodos').then(
      (response)=>{
