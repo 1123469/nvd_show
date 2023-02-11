@@ -32,6 +32,16 @@ public class VulController {
         else
             return "Insertion Failed!";
     }
+    @PostMapping("/addVuls")
+    public String addVuls(@RequestBody VulItem vulItem){
+
+        int res = vulsMapper.insert(vulItem);
+        System.out.println(vulItem);
+        if(res>0)
+            return res+" Insertion Succeeded!";
+        else
+            return "Insertion Failed!";
+    }
 
     @PostMapping("/deleteTodos")
     public String deleteTodos(@RequestBody VulItem todoItem){

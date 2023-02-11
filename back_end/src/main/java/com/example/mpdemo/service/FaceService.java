@@ -29,6 +29,7 @@ public class FaceService {
 //            in.close();
             BufferedReader in = new BufferedReader(new InputStreamReader(proc.getInputStream()));
             String line = in.readLine();
+            System.out.println(line);
             while(line!=null){
                 // 显示结果
                 System.out.println("springboot执行python结果:"+line);
