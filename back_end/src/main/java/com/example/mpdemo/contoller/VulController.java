@@ -2,9 +2,11 @@ package com.example.mpdemo.contoller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.example.mpdemo.entity.VulItem;
 import com.example.mpdemo.mapper.VulsMapper;
+import com.example.mpdemo.service.MyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -12,6 +14,8 @@ import java.util.List;
 public class VulController {
     @Autowired
     private VulsMapper vulsMapper;
+    @Autowired
+    private MyService myService;
     @GetMapping("/hello")
     public String hello(){
         return "Hello, Vul App!";
@@ -24,7 +28,12 @@ public class VulController {
     }
 
     @PostMapping("/addTodos")
-    public String addTodos(@RequestBody VulItem vulItem){
+    public String addTodos(@RequestBody VulItem vulItem) throws IOException {
+        String contents = vulItem.getContents();
+        System.out.println("键入的内容是: "+contents);
+        String cveType = myService.getCVEType(contents);
+        System.out.println("CVEType是: "+cveType);
+        vulItem.setType(cveType);
         int res = vulsMapper.insert(vulItem);
         System.out.println(vulItem);
         if(res>0)
